@@ -1,0 +1,353 @@
+{% load static %}
+
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	{% for n in profile %}
+	<title>{{n.name}} | Welcome</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+	{% endfor %}
+	
+	
+	<!-- Font -->
+	
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700%7CAllura" rel="stylesheet">
+	
+	<!-- Stylesheets -->
+	
+	<link href="{% static 'common-css/bootstrap.css' %}" rel="stylesheet">
+	
+	<link href="{% static 'common-css/ionicons.css' %}" rel="stylesheet">
+	
+	<link href="{% static 'common-css/fluidbox.min.css' %}" rel="stylesheet">
+	
+	<link href="{% static '03-cv-business/css/styles.css' %}" rel="stylesheet">
+	
+	<link href="{% static '03-cv-business/css/responsive.css' %}" rel="stylesheet">
+	
+</head>
+<body>
+	
+	<section class="intro-section">
+		<div class="container">
+		
+			<div class="heading-wrapper">
+				<div class="row">
+			{% for pro in profile %}
+					<div class="col-sm-6 col-md-6 col-lg-4">
+						<div class="info">
+							<i class="icon ion-ios-location-outline"></i>
+							<div class="right-area">
+								<h5>{{pro.address}}</h5>
+							</div><!-- right-area -->
+						</div><!-- info -->
+					</div><!-- col-sm-4 -->
+					
+					<div class="col-sm-6 col-md-6 col-lg-4">
+						<div class="info">
+							<i class="icon ion-ios-telephone-outline"></i>
+							<div class="right-area">
+								<h5>+91 9262715527</h5>
+								<h6>MON - FRI,8AM - 7PM</h6>
+							</div><!-- right-area -->
+						</div><!-- info -->
+					</div><!-- col-sm-4 -->
+					
+					<div class="col-sm-6 col-md-6 col-lg-4">
+						<div class="info">
+							<i class="icon ion-ios-chatboxes-outline"></i>
+							<div class="right-area">
+								<h5>{{pro.email}}</h5>
+								<h6>REPLY IN 24 HOURS</h6>
+							</div><!-- right-area -->
+						</div><!-- info -->
+					</div><!-- col-sm-4 -->
+				</div><!-- row -->
+			</div><!-- heading-wrapper -->
+			
+		
+			<div class="intro">
+				<div class="row">
+				
+					<div class="col-sm-8 col-md-4 col-lg-3">
+						{% for i in img %}
+						<div class="profile-img margin-b-30"><img src="{{i.image.url}}" alt=""></div>
+						{% endfor %}
+					</div><!-- col-sm-8 -->
+					
+					<div class="col-sm-10 col-md-5 col-lg-6">		
+							<h2><b>{{pro.name}}</b></h2>
+							<h4 class="font-yellow">{{pro.work}}</h4>
+							<ul class="information margin-tb-30">
+								<li><b class="font-yellow">BORN</b> : {{pro.dob}}</li>
+								<li><b class="font-yellow">EMAIL</b> : {{pro.email}}</li>
+								<li><b class="font-yellow">MARITAL STATUS</b> : {{pro.relationship}}</li>
+								<li><b class="font-yellow">CALL ME</b> : {{pro.callme}}</li>
+								
+							</ul>
+							<ul class="social-icons">
+								<li><a href="#"><i class="ion-social-pinterest"></i></a></li>
+								<li><a href="#"><i class="ion-social-linkedin"></i></a></li>
+								<li><a href="#"><i class="ion-social-instagram"></i></a></li>
+								<li><a href="#"><i class="ion-social-facebook"></i></a></li>
+								<li><a href="#"><i class="ion-social-twitter"></i></a></li>
+							</ul>
+					</div><!-- col-sm-8 -->
+					
+					<div class="col-sm-10 col-md-3 col-lg-3">
+						<a class="downlad-btn" href="#">Hire Me</a>
+						<a class="downlad-btn" href="admin">Admin Login</a>
+					</div><!-- col-lg-2 -->
+					
+				</div><!-- row -->
+			{% endfor %}
+			</div><!-- intro -->
+		</div><!-- container -->
+	</section><!-- intro-section -->
+	
+	
+	<section class="about-section section">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 center-text">
+					<div class="heading ">
+						<h3><b>About me</b></h3>
+						<h6 class="font-lite-black"><b>PROFESSIONAL PATH</b></h6>
+					</div>
+				</div><!-- col-sm-3 -->
+				<div class="col-sm-12 col-md-12">
+					{% for a in abbb %}
+					<p class="margin-b-30">
+						{{a.aboutme}}
+					</p>
+					{% endfor %}
+				</div><!-- col-sm-6 -->
+			
+				<div class="col-sm-12" id="counter">
+					<div class="row" >
+				
+						<div class="col-sm-6 col-md-6 col-lg-3">
+							<div class="counter margin-b-50">
+								<h1 class="title"><b><span class="counter-value" data-duration="400" data-count="{{metarial.coderdegree}}">0</span></b></h1>
+								<h5 class="desc"><b>Coder Degrees</b></h5>
+							</div><!-- counter -->
+						</div><!-- col-md-3-->
+						
+						<div class="col-sm-6 col-md-6 col-lg-3">
+							<div class="counter margin-b-50">
+								<h1 class="title"><b><span class="counter-value" data-duration="1400" data-count="{{metarial.cmplet_project}}">0</span></b></h1>
+								<h5 class="desc"><b>Project Completed</b></h5>
+							</div><!-- counter -->
+						</div><!-- col-md-3-->
+						
+						<div class="col-sm-6 col-md-6 col-lg-3">
+							<div class="counter margin-b-50">
+								<h1 class="title"><b><span class="counter-value" data-duration="700" data-count="{{metarial.satisfied_client}}">0</span></b></h1>
+								<h5 class="desc"><b>Satisfied Clients</b></h5>
+							</div><!-- counter -->
+						</div><!-- col-md-3-->
+						
+						<div class="col-sm-6 col-md-6 col-lg-3">
+							<div class="counter margin-b-50">
+								<h1 class="title"><b><span class="counter-value" data-duration="2000" data-count="{{metarial.finished}}">0</span></b></h1>
+								<h5 class="desc"><b>Finished Projects</b></h5>
+							</div><!-- counter -->
+						</div><!-- col-md-3-->
+					
+					</div><!-- row-->
+				</div><!-- col-sm-12 -->
+				
+			</div><!-- row -->
+		</div><!-- container -->
+	</section><!-- about-section -->
+	
+
+	<section class="education-section section">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 center-text">
+					<div class="heading">
+						<h3><b>Education</b></h3>
+						<h6 class="font-lite-black"><b>ACADEMIC CAREER</b></h6>
+					</div>
+				</div><!-- col-sm-3 -->
+				
+				<div class="col-sm-12">
+				
+					<div class="education-wrapper margin-b-50">
+						
+						
+						<div class="education left">
+							<h4><b>INTERMEDIAT Exam. (12th)</b></h4>
+							<h5 class="font-yellow"><b>High School Painal</b></h5>
+							<h6 class="font-lite-black margin-t-10">Completed IN June 2018(2 YEARS)</h6>
+							<p class="margin-t-30">I Completed my INTERMEDIAT Exam. (12th) from High school painal bihta 800111. </p>
+						</div>
+
+						<div class="education right">
+							<h4><b>Bachelor of Science In Information Technology</b></h4>
+							<h5 class="font-yellow"><b>A.N. College <a class="downlad-btn" href="#">Visit</a></b></h5>
+							<h6 class="font-lite-black margin-t-10">Joined August 27 2018 Still Appearing</h6>
+							<p class="margin-t-30">I Joined A. N. College Patna in August 27 2018 for the Bachelor in Information Technology. I'm Still student of A.N. College.</p>
+						</div>
+
+						<div class="education left">
+							<h4><b>Website Devloper (PHP/PYTHON)</b></h4>
+							<h5 class="font-yellow"><b>Tech Cloud <a class="downlad-btn" href="#">Visit</a></b></h5>
+							<h6 class="font-lite-black margin-t-10">GRADUATED IN April 2019(3 MONTHS)</h6>
+							<p class="margin-t-30">I have degree of Website Devloper Which i Completed from TECH CLOUD PATNA. </p>
+						</div><!-- education -->
+						
+						
+						<!-- education -->
+					</div><!-- education-wrapper -->
+				</div><!-- col-sm-9 -->
+			</div><!-- row -->
+		</div><!-- container -->
+		
+	</section><!-- education-section -->
+	
+	
+	<section class="quoto-section center-text">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<i class="icon ion-quote"></i>
+					<h3 class="font-yellow">
+						{% for des in q %}
+							<b>{{des.quto}}</b></h3>
+						{% endfor %}
+				</div><!-- col-sm-12 -->
+			</div><!-- row -->
+		</div><!-- container -->
+	</section><!-- quoto-section -->
+	
+	<section class="skills-section section">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 center-text">
+					<div class="heading">
+						<h3><b>Website Devlopment Skills</b></h3>
+						<h6 class="font-lite-black"><b>I'M GOOD AT</b></h6>
+					</div>
+				</div><!-- col-sm-12 -->
+			
+				<div class="col-sm-12 col-md-6">
+					<h4><b>Front End</b></h4>
+					<h6 class="expert">Still learning</h6>
+		
+					<div class="line-progress margin-b-20" data-prog-percent=".77"><div></div>
+						<p class="progress-title"><b>HTML</b></p></div>
+					
+					<div class="line-progress margin-b-50" data-prog-percent=".65"><div></div>
+						<p class="progress-title"><b>CSS</b></p></div>
+
+					<div class="line-progress margin-b-20" data-prog-percent=".76"><div></div>
+						<p class="progress-title"><b>BOOTSTRAP</b></p></div>
+
+					<div class="line-progress margin-b-20" data-prog-percent=".58"><div></div>
+						<p class="progress-title"><b>JAVA SCRIPT</b></p></div>
+
+				</div><!-- col-md-6 -->
+				
+				<div class="col-sm-12 col-md-6">
+					<h4><b>Back End</b></h4>
+					<h6 class="expert">Still learning</h6>
+						
+					<div class="line-progress margin-b-20" data-prog-percent=".89"><div></div>
+						<p class="progress-title"><b>PHP</b></p></div>
+					
+					<div class="line-progress margin-b-50" data-prog-percent=".43"><div></div>
+						<p class="progress-title"><b>PYTHON</b></p></div>
+
+					<div class="line-progress margin-b-20" data-prog-percent=".77"><div></div>
+						<p class="progress-title"><b>MYSQL</b></p></div>
+					
+					<div class="line-progress margin-b-50" data-prog-percent=".67"><div></div>
+						<p class="progress-title"><b>POSTGRESQL</b></p></div>
+
+				</div><!-- col-md-6 -->
+			</div><!-- row -->
+		</div><!-- container -->
+	</section><!-- skills-section -->
+	
+	<section class="radial-progress-section section">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-md-6 col-lg-3">
+					<div class="radial-prog-area margin-b-30">
+						<div class="radial-progress" data-prog-percent=".60">
+							<div></div>
+							<h6 class="progress-title">C/C++</h6>
+						</div>
+					</div><!-- radial-prog-area-->
+				</div><!-- col-sm-6-->
+			
+				<div class="col-sm-6 col-md-6 col-lg-3">
+					<div class="radial-prog-area margin-b-30">
+						<div class="radial-progress" data-prog-percent=".78">
+							<div></div>
+							<h6 class="progress-title">WEB DESIGN</h6>
+						</div>
+					</div><!-- radial-prog-area-->
+				</div><!-- col-sm-6-->
+				
+				<div class="col-sm-6 col-md-6 col-lg-3">
+					<div class="radial-prog-area margin-b-30">
+						<div class="radial-progress" data-prog-percent=".43">
+							<div></div>
+							<h6 class="progress-title">PYTHON</h6>
+						</div>
+					</div><!-- radial-prog-area-->
+				</div><!-- col-sm-6-->
+				
+				
+				<div class="col-sm-6 col-md-6 col-lg-3">
+					<div class="radial-prog-area margin-b-50">
+						<div class="radial-progress" data-prog-percent=".89">
+							<div></div>
+							<h6 class="progress-title">PHP</h6>
+						</div>
+					</div><!-- radial-prog-area-->
+				</div><!-- col-sm-6-->
+			
+			</div><!-- row -->
+		</div><!-- container -->
+	</section><!-- radial-progress-section -->
+	
+	<footer>
+		<p class="copyright">
+			Devloper:- Gaurav Singh
+		</p>
+		<p class="copyright">
+			<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;All rights reserved 
+		</p>
+		
+	</footer>
+
+	
+	
+	<!-- SCIPTS -->
+	
+	<script src="{% static 'common-js/jquery-3.2.1.min.js' %}"></script>
+	
+	<script src="{% static 'common-js/tether.min.js' %}"></script>
+	
+	<script src="{% static 'common-js/bootstrap.js' %}"></script>
+	
+	<script src="{% static 'common-js/isotope.pkgd.min.js' %}"></script>
+	
+	<script src="{% static 'common-js/jquery.waypoints.min.js' %}"></script>
+	
+	<script src="{% static 'common-js/progressbar.min.js' %}"></script>
+	
+	<script src="{% static 'common-js/jquery.fluidbox.min.js' %}"></script>
+	
+	<script src="{% static 'common-js/scripts.js' %}"></script>
+	
+</body>
+</html>
